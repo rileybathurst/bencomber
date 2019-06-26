@@ -11,15 +11,22 @@
   </head>
   <body>
     <div id="page-wrap">
+      <div class="white-out" style="grid-row: 1; grid-column: 1;"></div>
+      <header class="white-out">
+        <h1>Ben Comber</h1>
+      </header>
+      <div class="white-out" style="grid-row: 1; grid-column: 3;"></div>
+      <div class="white-out" style="grid-row: 2; grid-column: 1;"></div>
+      <div class="breadcrumbs white-out">Home</div>
+
       <div id="canvas">
-        <canvas height="1115" style="width: 1612px; height: 115px" width="1612"></canvas>
       </div>
 
       <div class="curtain" data-fs-id="simple-plane-fs" data-vs-id="simple-plane-vs">
-        <img crossorigin="anonymous" data-sampler="simplePlaneTexture" src="images/Olympus_Opening_Ben_Comber_61.jpg">
+        <img crossorigin="anonymous" data-sampler="simplePlaneTexture" src="images/Remarks_127.JPG">
       </div>
 
-    </div>
+
 
       <script id="simple-plane-vs" type="x-shader/x-vertex">
 
@@ -56,7 +63,7 @@
         float distanceFromMouse = distance(uMousePosition, vec2(vertexPosition.x, vertexPosition.y));
 
         // calculate our wave effect
-        float waveSinusoid = cos(5.0 * (distanceFromMouse - (uTime / 75.0)));
+        float waveSinusoid = cos(2.0 * (distanceFromMouse - (uTime / 75.0)));
 
         // attenuate the effect based on mouse distance
         float distanceStrength = (0.4 / (distanceFromMouse + 0.4));
@@ -118,6 +125,17 @@
 
 
         </script>
+
+    <div class="tag white-out">Snowboard Site</div>
+
+    <footer class="white-out" style="z-index: 100;">
+      <a href="/archives">Archives</a>
+      <a href="/contact">Contact</a>
+    </footer>
+
+      <div class="white-out" style="grid-row: 3; grid-column: 1/4;"></div>
+          </div>
+
     <script src="bundle.js" async></script>
 
   </body>
