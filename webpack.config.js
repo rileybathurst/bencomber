@@ -21,7 +21,7 @@ module.exports = [{
           {
             loader: 'postcss-loader',
             options: {
-               plugins: () => [autoprefixer()]
+              plugins: () => [autoprefixer()]
             }
           },
           { loader: 'sass-loader',
