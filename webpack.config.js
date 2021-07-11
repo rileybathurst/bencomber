@@ -1,4 +1,4 @@
-const autoprefixer = require("autoprefixer");
+// const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
@@ -6,7 +6,7 @@ module.exports = [
     entry: ["./src/app.scss", "./src/app.js"],
     output: {
       filename: "[name]bundle.js",
-      path: path.resolve(__dirname, "dist"),
+      // path: path.resolve(__dirname, "dist"),
       clean: true,
     },
     devtool: "inline-source-map",
@@ -32,12 +32,6 @@ module.exports = [
             { loader: "extract-loader" },
             { loader: "css-loader" },
             {
-              loader: "postcss-loader",
-              options: {
-                plugins: () => [autoprefixer()],
-              },
-            },
-            {
               loader: "sass-loader",
               options: {
                 includePaths: ["./node_modules"],
@@ -48,9 +42,6 @@ module.exports = [
         {
           test: /\.js$/,
           loader: "babel-loader",
-          query: {
-            presets: ["env"],
-          },
         },
       ],
     },
