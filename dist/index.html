@@ -37,7 +37,6 @@
 
       <script id="simple-plane-vs" type="x-shader/x-vertex">
 
-
         #ifdef GL_ES
         precision mediump float;
         #endif
@@ -83,17 +82,15 @@
           vertexPosition.x +=  (distortionEffect / 15.0 * (uResolution.x / uResolution.y) * (uMousePosition.x - vertexPosition.x));
           vertexPosition.y +=  distortionEffect / 15.0 * (uMousePosition.y - vertexPosition.y);
 
-             gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
+            gl_Position = uPMatrix * uMVMatrix * vec4(vertexPosition, 1.0);
 
-             // varyings
-             // here we use our texture matrix to calculate correct texture coords values
-             vTextureCoord = (simplePlaneTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy;
-             vVertexPosition = vertexPosition;
+            // varyings
+            // here we use our texture matrix to calculate correct texture coords values
+            vTextureCoord = (simplePlaneTextureMatrix * vec4(aTextureCoord, 0.0, 1.0)).xy;
+            vVertexPosition = vertexPosition;
         }
       </script>
       <script id="simple-plane-fs" type="x-shader/x-fragment">
-
-
 
         #ifdef GL_ES
         precision mediump float;

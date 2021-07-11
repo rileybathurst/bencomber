@@ -1,11 +1,23 @@
 const autoprefixer = require("autoprefixer");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
   {
-    entry: ["./app.scss", "./app.js"],
+    entry: ["./src/app.scss", "./src/app.js"],
     output: {
-      filename: "bundle.js",
+      filename: "[name]bundle.js",
+      path: path.resolve(__dirname, "dist"),
+      clean: true,
     },
+    devtool: "inline-source-map",
+    devServer: {
+      contentBase: "./dist",
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        title: "Ben Comber",
+      }),
+    ],
     module: {
       rules: [
         {
